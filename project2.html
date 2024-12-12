@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project2</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    font-family: Arial, sans-serif;
+    background-color: black; /* Fallback color */
+    color: #ffffff;
+    line-height: 1.6;
+    padding: 2rem;
+    margin: 2em;
+    position: relative; /* For positioning the pseudo-element */
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Ensures the image stays fixed during scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/css_flexbox.png") no-repeat center center;
+    background-size: contain;
+    opacity: 0.2; /* Adjust the opacity for less visibility */
+    z-index: -1; /* Keeps the image behind the content */
+    pointer-events: none; /* Allows content interactions without interference */
+}
+
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: cyan;
+            text-shadow: 0 0 20px cyan;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #FFC0CB;
+            text-shadow: 0 0 50px #FFC0CB;
+            margin-bottom: 0.5rem;
+            position: relative;
+            animation: fadeIn 2s ease-in;
+            letter-spacing: 0.04em;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #FFC0CB;
+            bottom: -5px;
+            left: 0;
+            animation: underlineGrow 1.5s ease-in-out forwards;
+        }
+
+        p, li {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            color: #ffcc66;
+        }
+
+        ul li {
+            animation-delay: 0.5s;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes underlineGrow {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .project1 {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2rem;
+            animation: popIn 1.5s ease-in-out;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .project1:hover {
+            transform: scale(1.03);
+            transition: transform 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .key-features {
+            margin-top: 1.5rem;
+        }
+
+        .key-features h2 {
+            margin-top: 1.5rem;
+        }
+
+        .highlight {
+            color: cyan;
+            font-weight: bold;
+        }
+
+        .applications {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+        }
+
+        .applications h2 {
+            margin-bottom: 1rem;
+        }
+
+        /* Additional Animations */
+        .applications:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            transition: box-shadow 0.4s ease-in-out;
+        }
+
+        ul li:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .project1_heading{
+            font-size: 2rem;
+            text-align: center;
+            text-shadow: 0 0 50px #FFC0CB,
+                         0 0 10px #FFC0CB;
+        }
+
+        /* Flexcard button styles */
+        .flexcard-button {
+            margin: 1em;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            color: black;
+            border: none;
+            border-radius: 1em;
+            cursor: pointer;
+            box-shadow: 0 0 10px #FFC0CB, 0 0 20px #FFC0CB, 0 0 30px #FFC0CB;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: buttonHover 1s ease-out infinite; /* Button hover animation */
+        }
+         /* Hover effect for buttons */
+         .bhov {
+            background-color: #FFB6C1;
+            transition: transform 0.3s;
+        }
+
+        .bhov:hover {
+            border: 2px solid #FFC0CB;
+            border-radius: 2em;
+            background-color: white;
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px #FFC0CB, 0 0 20px #FFC0CB, 0 0 30px #FFC0CB;
+            transform: scale(1.05); /* Slight grow effect on hover */
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .pro{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Project</h1>
+    <section class="project1">
+        <div class="pro">
+            <h2 class="project1_heading">Key Flexbox Features for a Responsive Web Design</h2>
+            <button class="flexcard-button bhov"><a href="C:\Users\durga\Desktop\flexBoxProject\flex_index.html">Learn More</a></button>
+        </div>
+            <p class="project1_description">This project is a responsive, front-end web application for Tap Accounting, designed for small businesses to manage their accounting needs in a user-friendly and intuitive manner. Built with HTML and CSS, the layout is flexible, mobile-friendly, and easy to navigate.</p>
+
+        <div class="key-features">
+            <h2>Key Features:</h2>
+            <h2>1) Header and Navigation:</h2>
+            <p>A clean, responsive header featuring a company logo and a navigation menu with links to Contact, Features, and Pricing sections. The header also includes "Login" and "Enter App" buttons styled with a modern look.</p>
+            <h2>2) Hero Section: </h2>
+            <p>A captivating hero section that highlights the key message of the application, with a bold title, descriptive text, and a call-to-action button ("Learn More").</p>
+            <h2>3) Pricing Section: </h2>
+            <p> The pricing section presents three different pricing plans (Starter, Business, and Enterprise), each with a detailed description of the features and benefits. It also includes a "Get Started" button for each plan.</p>
+            <h2>4) Features Section:</h2>
+            <p>This section highlights the key features of the accounting software, including Payroll, Expense Claims, GST Handling, Reporting, and Inventory management. Each feature is presented with a brief description in a responsive card layout.</p>
+            <h2>5) Information Section:</h2>
+            <p>A section that invites users to reach out for inquiries or business-related questions, with a clear call to action ("Reach Out").</p>
+            <h2>Footer: </h2>
+            <p>The footer includes the company name and additional styling to keep the page consistent.</p>
+        </div>
+        <div class="key-features">
+            h2>Design & Styling:</h2>
+            <h2>1) Modern UI:</h2>
+            <p>The layout uses a minimalist design with a focus on content and ease of navigation.</p>
+            <h2>2) Flexbox Layouts: </h2>
+            <p>Utilizes Flexbox for responsive design, ensuring that the website looks great on both desktop and mobile devices.</p>
+            <h2>3) Custom Buttons & Links:  </h2>
+            <p> Buttons are styled with contrasting colors to stand out, enhancing the user experience with clear calls to action.</p>
+            <h2>4) Typography:</h2>
+            <p>Uses the 'Open Sans' font from Google Fonts for a clean and modern look.</p>
+            <h2>5) Color Scheme:</h2>
+            <p>The application uses a combination of black, white, and subtle shades of gray to create a professional and sleek aesthetic.</p>
+        </div>
+
+        <div class="applications">
+            <h2>Applications:</h2>
+            <p>This design can be adapted for <span class="highlight">web banners</span>, <span class="highlight">loading animations</span>, or <span class="highlight">interactive web elements</span> to enhance user experience.</p>
+            <p>The project utilizes Flexbox for an <span class="highlight">adaptive navigation menu</span>,<span class="highlight">dynamic layout for pricing sections</span> , <span class="highlight">a responsive feature cards layout</span>, <span class="highlight">an organized footer design</span>, and <span class="highlight">efficient button and element alignment</span>.</p>
+        </div>
+
+        <p>This project highlights my proficiency in:</p>
+        <ul>
+            <li>Creating responsive and flexible web layouts using Flexbox.</li>
+            <li>Designing adaptive navigation menus for different screen sizes.</li>
+            <li>Centering content and elements effectively for better user experience.</li>
+            <li>Building responsive and organized feature card layouts.</li>
+            <li>Aligning buttons and elements for a clean and polished design.</li>
+        </ul>
+    </section>
+</body>
+</html>

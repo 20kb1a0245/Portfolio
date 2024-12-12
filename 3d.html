@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Design</title>
+    <link rel="stylesheet" href="3d.css">
+</head>
+<body>
+    <div class="center">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <script>
+        // JavaScript for changing color on click
+        const spans = document.querySelectorAll('span');
+        spans.forEach(span => {
+            span.addEventListener('click', function() {
+                this.style.backgroundColor = '#ff5722';
+            });
+        });
+    </script>
+</body>
+</html>

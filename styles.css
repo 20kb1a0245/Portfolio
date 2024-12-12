@@ -1,0 +1,183 @@
+/* Basic Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: black;
+    color: white;
+    animation: fadeInPage 1.5s ease-in-out;
+}
+
+/* Animations for All Elements */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slideInHeader {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes bounceImage {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+@keyframes slideInDescription {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes glowButton {
+    0%, 100% {
+        box-shadow: 0 0 10px #FFC0CB;
+    }
+    50% {
+        box-shadow: 0 0 30px #FFC0CB;
+    }
+}
+@keyframes footerSlideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header Animation */
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 1em auto;
+}
+.header h1 {
+    font-size: 2rem;
+    animation: slideInHeader 1s ease-out;
+}
+.head{
+    font-size: 3rem;
+}
+.head2{
+    font-size: 2rem;
+}
+
+/* Image Animation */
+.intro__image {
+    max-width: 50%;
+    padding: 6em;
+    max-height: 50%;
+    border-radius: 3em;
+    background: linear-gradient(90deg, #FFDAB9, #F7E7CE, #FFFFF0, #FFB6C1);
+    animation: bounceImage 2s infinite ease-in-out;
+}
+.intro_box {
+    border-radius: 3em;
+    max-height: 100%;
+    overflow: hidden;
+}
+.intro_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Description Animation */
+.intro {
+    display: flex;
+}
+.intro__description {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    text-align: justify;
+    max-width: 55ch;
+    animation: slideInDescription 1.5s ease-out;
+}
+.intro__description h1, .role, .description {
+    animation: fadeInPage 2s ease-in-out forwards;
+}
+
+/* Button Animation */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 1em;
+    width: 100%;
+}
+.btn {
+    padding: 0.7em;
+    margin-top: 1em;
+    width: 100%;
+    border-radius: 0.7em;
+    font-weight: 600;
+    animation: glowButton 3s infinite ease-in-out;
+}
+.bhov {
+    background-color: #FFB6C1;
+}
+.bhov:hover {
+    transform: scale(1.1);
+    border: 2px solid #FFC0CB;
+    border-radius: 2em;
+    background-color: white;
+    font-size: 1rem;
+    box-shadow: 0 0 10px #FFC0CB, 0 0 20px #FFC0CB, 0 0 30px #FFC0CB;
+}
+
+/* Footer Animation */
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    animation: footerSlideUp 1s ease-out;
+}
+.footer p {
+    font-size: 1rem;
+    color: #FFC0CB;
+}
+
+/* Hover Effects */
+.thov {
+    text-shadow: 0 0 10px #FFC0CB;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.thov:hover {
+    text-shadow: 0 0 20px #FFC0CB, 0 0 30px #FFC0CB, 0 0 40px #FFC0CB;
+    transform: scale(1.1);
+}
+a {
+    text-decoration: none; /* No underline for links */
+    color: black;
+}
+a:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+    color:firebrick;
+}

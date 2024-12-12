@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project3</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    font-family: Arial, sans-serif;
+    background-color: black; /* Fallback color */
+    color: #ffffff;
+    line-height: 1.6;
+    padding: 2rem;
+    margin: 2em;
+    position: relative; /* For positioning the pseudo-element */
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Ensures the image stays fixed during scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/flexcard_image.png") no-repeat center center;
+    background-size: contain;
+    opacity: 0.2; /* Adjust the opacity for less visibility */
+    z-index: -1; /* Keeps the image behind the content */
+    pointer-events: none; /* Allows content interactions without interference */
+}
+
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: cyan;
+            text-shadow: 0 0 20px cyan;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #FFC0CB;
+            text-shadow: 0 0 3px #FFC0CB;
+            margin-bottom: 0.5rem;
+            position: relative;
+            animation: fadeIn 2s ease-in;
+            letter-spacing: 0.04em;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #FFC0CB;
+            bottom: -5px;
+            left: 0;
+            animation: underlineGrow 1.5s ease-in-out forwards;
+        }
+
+        p, li {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            color: #ffcc66;
+        }
+
+        ul li {
+            animation-delay: 0.5s;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes underlineGrow {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .project1 {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2rem;
+            animation: popIn 1.5s ease-in-out;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .project1:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .key-features {
+            margin-top: 1.5rem;
+        }
+
+        .key-features h2 {
+            margin-top: 1.5rem;
+        }
+
+        .highlight {
+            color: cyan;
+            font-weight: bold;
+        }
+
+        .applications {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+        }
+
+        .applications h2 {
+            margin-bottom: 1rem;
+        }
+
+        /* Additional Animations */
+        .applications:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            transition: box-shadow 0.4s ease-in-out;
+        }
+
+        ul li:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .project1_heading{
+            font-size: 2rem;
+            text-align: center;
+            text-shadow: 0 0 50px #FFC0CB,
+                         0 0 10px #FFC0CB;
+        }
+
+        /* Flexcard button styles */
+        .flexcard-button {
+            margin: 1em;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            color: black;
+            border: none;
+            border-radius: 1em;
+            cursor: pointer;
+            box-shadow: 0 0 10px #FFC0CB, 0 0 20px #FFC0CB, 0 0 30px #FFC0CB;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: buttonHover 1s ease-out infinite; /* Button hover animation */
+        }
+         /* Hover effect for buttons */
+         .bhov {
+            background-color: #FFB6C1;
+            transition: transform 0.3s;
+        }
+
+        .bhov:hover {
+            border: 2px solid #FFC0CB;
+            border-radius: 2em;
+            background-color: white;
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px #FFC0CB, 0 0 20px #FFC0CB, 0 0 30px #FFC0CB;
+            transform: scale(1.05); /* Slight grow effect on hover */
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .pro{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Project</h1>
+    <section class="project1">
+        <div class="pro">
+            <h2 class="project1_heading">Interactive Card Design with Modern Web Techniques</h2>
+            <button class="flexcard-button bhov"><a href="C:\Users\durga\Desktop\Mini Project2(HTML & CSS)\index.html">Learn More</a></button>
+        </div>
+        <p class="project1_description">The project represents a <span class="highlight">card component</span> used to showcase a service or product, with a focus on clarity and user interaction. The design includes a clean, modern layout with strategic use of colors, text styling, and spacing to create an aesthetically pleasing and functional card.</p>
+
+        <div class="key-features">
+            <h2>Key Features:</h2>
+            <h2>1) Responsive Layout:</h2>
+            <p>The card design adjusts seamlessly to different screen sizes, ensuring a consistent user experience across devices.</p>
+            <h2>2) Elegant Card Design:</h2>
+            <p>A visually appealing card with a dark background, white text, and subtle borders for a sleek, modern look.</p>
+            <h2>3) Text Styling: </h2>
+            <p>Capitalized, uppercase headers and descriptive text with optimized spacing and readability.</p>
+            <h2>4) Well-Structured HTML: </h2>
+            <p>Clean and semantic HTML structure, improving accessibility and SEO.</p>
+            <h2>5) Customizable Styles: </h2>
+            <p>The card design is easy to customize and adapt to different content types and branding needs.</p>
+        </div>
+
+        <div class="applications">
+            <h2>Applications:</h2>
+            <p>This design can be adapted for <span class="highlight">landing pages</span>, <span class="highlight">call-to-action components</span>, or <span class="highlight">portfolio showcases</span> to demonstrate skills and engage users effectively.</p>
+        </div>
+
+        <p>This project highlights my proficiency in:</p>
+        <ul>
+            <li>Designing a stylish and modern card component using HTML and CSS.</li>
+            <li>Utilizing responsive typography to create a clear and engaging layout.</li>
+            <li>Applying background colors, borders, and padding for a visually appealing card design.</li>
+            <li>Implementing text styling (uppercase, letter-spacing, capitalization) for emphasis and readability.</li>
+            <li>Creating an interactive button with hover effects for improved user experience.</li>
+            <li>Using font-family for consistent and visually attractive typography.</li>
+        </ul>
+    </section>
+</body>
+</html>

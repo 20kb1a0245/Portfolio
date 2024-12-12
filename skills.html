@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Skills</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Heading Section */
+        .heading {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 20px;
+        }
+
+        h1 {
+            position: relative;
+            margin: 0.5em 0 0 0;
+            font-size: 4em;
+            font-weight: 900;
+            color: #fff;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        h1 span {
+            color: #FFC0CB;
+            text-shadow: 0 0 10px #FFC0CB;
+        }
+
+        h1:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 0;
+            height: 5px;
+            background: #FFC0CB;
+            animation: underline 2s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes underline {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Skills Container */
+        .skills-container {
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        .skills-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            margin-bottom: 100px;
+        }
+
+        .skills-group h2 {
+            font-size: 2em;
+            color: #FFC0CB;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            text-shadow: 0 0 50px #FFC0CB, 0 0 10px #FFC0CB;
+            text-decoration: underline;
+        }
+
+        /* Skill Item */
+        .skill-item {
+            font-size: 1.5em;
+            color: white;
+            margin: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: bounceIn 1s ease-out forwards;
+        }
+
+        .skill-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 1em;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 10px solid #555;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle span {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 5px solid #FFC0CB;
+            animation: circleAnimation90 2s ease-in-out;
+        }
+
+        .circle-text {
+            position: absolute;
+            font-size: 1.5em;
+            color: #FFC0CB;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Professional Skills */
+        .pskills-container {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        .pskills-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+        }
+
+        .pskill-item {
+            background: linear-gradient(135deg, #FFC0CB, #FF69B4);
+            color: black;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pskill-item:hover {
+            transform: scale(1);
+            box-shadow: 0 15px 30px rgba(255, 105, 180, 0.5);
+            background: linear-gradient(135deg, #FF69B4, #FFC0CB);
+            color: white;
+        }
+
+        .pskill-item span {
+            font-size: 1.8em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .pskill-item .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .pskill-item .progress {
+            height: 100%;
+            background: black;
+            transition: width 1s ease;
+        }
+
+        .pskill-item .percentage {
+            margin-top: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+        /* Sticky Header */
+        .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limit the width */
+    padding: 0.5em 2em; /* Reduce the padding */
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center the header */
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    color: #FFB6C1;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.header a {
+    text-decoration: none;
+    color: #FFB6C1;
+    font-size: 1.2rem;
+    padding: 0.5em;
+    border: 2px solid #FFB6C1;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.header a:hover {
+    background-color: #FFB6C1;
+    color: black;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="header">
+        <h1>Portfolio</h1>
+        <a href="index.html">Home</a>
+    </nav>
+    <div class="heading">
+        <h1><span>MY </span>SKILLS</h1>
+    </div>
+
+    <h1 style="font-size: 3em; margin-top: 20px;">Technical <span>Skills</span></h1>
+    <div class="skills-container">
+        <div class="skills-group">
+            <h2>Frontend</h2>
+            <div class="skill-item">
+                <img src="images/HTML.png" alt="HTML Logo" class="skill-logo">
+                HTML
+                <div class="circle">
+                    <div class="circle-text">90%</div>
+                    <span></span>
+                </div>
+            </div>
+            <div class="skill-item">
+                <img src="images/CSS.png" alt="CSS Logo" class="skill-logo">
+                CSS
+                <div class="circle">
+                    <div class="circle-text">85%</div>
+                    <span></span>
+                </div>
+            </div>
+            <div class="skill-item">
+                <img src="images/JavaScript.png" alt="JavaScript Logo" class="skill-logo">
+                JavaScript
+                <div class="circle">
+                    <div class="circle-text">80%</div>
+                    <span></span>
+                </div>
+            </div>
+            <div class="skill-item">
+                <img src="images/React.jpg" alt="React Logo" class="skill-logo">
+                React JS
+                <div class="circle">
+                    <div class="circle-text">75%</div>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-group">
+            <h2>Backend</h2>
+            <div class="skill-item">
+                <img src="images/Java.png" alt="Java Logo" class="skill-logo">
+                Java
+                <div class="circle">
+                    <div class="circle-text">95%</div>
+                    <span></span>
+                </div>
+            </div>
+            <div class="skill-item">
+                <img src="images/JDBC.png" alt="JDBC Logo" class="skill-logo">
+                JDBC
+                <div class="circle">
+                    <div class="circle-text">80%</div>
+                    <span></span>
+                </div>
+            </div>
+            <div class="skill-item">
+                <img src="images/Java_JEE.png" alt="JEE Logo" class="skill-logo">
+                JEE
+                <div class="circle">
+                    <div class="circle-text">75%</div>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-group">
+            <h2>Database</h2>
+            <div class="skill-item">
+                <img src="images/MySQL.png" alt="MySQL Logo" class="skill-logo">
+                MySQL
+                <div class="circle">
+                    <div class="circle-text">90%</div>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 style="font-size: 3em; margin-top: 20px;"><span>Professional</span> Skills</h1>
+    <div class="pskills-container">
+        <div class="pskills-group">
+            <div class="pskill-item">
+                <span>Problem Solving</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+                <div class="percentage">90%</div>
+            </div>
+            <div class="pskill-item">
+                <span>Creative Thinking</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+                <div class="percentage">85%</div>
+            </div>
+            <div class="pskill-item">
+                <span>Logical and Lateral Thinking</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+                <div class="percentage">80%</div>
+            </div>
+            <div class="pskill-item">
+                <span>Communication</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 95%;"></div>
+                </div>
+                <div class="percentage">95%</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

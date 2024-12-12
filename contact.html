@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Contact Section</title>
+    <!-- Include FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #121212);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 4rem 10%;
+            background: linear-gradient(145deg, #161623, #1c1c34);
+            border-radius: 2rem;
+        }
+
+        /* Left Column Styling */
+        .contact-left {
+            flex: 1;
+            max-width: 40%;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-left h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: white;
+            
+        }
+
+        .contact-left p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #cfcfcf;
+        }
+
+        .contact-info a {
+            display: block;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: #08FDD8;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #FFB6C1;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: #FFB6C1; /* Pink color for the icon */
+            background: black; /* Black background */
+            padding: 0.8rem;
+            font-size: 1.5rem;
+            border-radius: 10%; /* Rounded corners */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 3rem;
+            height: 3rem;
+            text-align: center;
+        }
+
+        .social-icons a:hover {
+            transform: rotate(20deg);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Right Column Styling */
+        .contact-right {
+            flex: 1;
+            max-width: 50%;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .contact-right::before {
+            content: '';
+            position: absolute;
+            top: -2rem;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff79c6, #ffb6c1);
+            border-radius: 2rem;
+            z-index: -1;
+            transform: rotate(-3deg);
+        }
+
+        .contact-right form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-right input,
+        .contact-right textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-right input:hover,
+        .contact-right textarea:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.02);
+        }
+
+        .contact-right textarea {
+            resize: none;
+        }
+
+        /* Placeholder text styling */
+        .contact-right input::placeholder,
+        .contact-right textarea::placeholder {
+            color: #f5f5f5; /* Light color for placeholders */
+        }
+
+        .contact-right button {
+            padding: 1rem;
+            background: linear-gradient(135deg, #ff79c6, #ffb6c1);
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-right button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.5);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .contact-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-left, .contact-right {
+                max-width: 90%;
+            }
+        }
+        .bhov {
+            background-color: #FFB6C1;
+            transition: transform 0.3s;
+        }
+
+        .bhov:hover {
+            border: 2px solid #FFC0CB;
+            border-radius: 2em;
+            background-color: white;
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px #FFC0CB, 0 0 20px #FFC0CB, 0 0 30px #FFC0CB;
+            transform: scale(1.05); /* Slight grow effect on hover */
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        /* Sticky Header */
+        .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limit the width */
+    padding: 0.5em 2em; /* Reduce the padding */
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center the header */
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    color: #FFB6C1;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.header a {
+    text-decoration: none;
+    color: #FFB6C1;
+    font-size: 1.2rem;
+    padding: 0.5em;
+    border: 2px solid #FFB6C1;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.header a:hover {
+    background-color: #FFB6C1;
+    color: black;
+}
+span{
+    color: #FFB6C1;
+    text-shadow: 0 0 10px #FFC0CB;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="header">
+        <h1>Portfolio</h1>
+        <a href="index.html">Home</a>
+    </nav>
+    <section class="contact-section">
+        <!-- Left Column -->
+        <div class="contact-left">
+            <h2> <span>Contact</span> Me</h2>
+            <p>
+                Feel free to reach out if you'd like to collaborate on a project, have a question, or just want to connect!
+            </p>
+            <div class="contact-info">
+                <a href="mailto:durgapriya479@gmail.com">📧 durgapriya479@gmail.com</a>
+                <a href="tel:+919885093778">📞 +91 9885093778</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/your_username" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/your_linkedin" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/+919885093778" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="contact-right">
+            <form action="mailto:durgapriya479@gmail.com" method="POST" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Enter Your Name" required>
+                <input type="email" name="email" placeholder="Enter Your Email" required>
+                <input type="text" name="subject" placeholder="Enter Your Subject" required>
+                <textarea name="message" placeholder="Enter Your Message" rows="5" required></textarea>
+                <button type="submit" class="bhov"><a href="">Send Message</a></button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

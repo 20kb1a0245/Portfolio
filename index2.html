@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+        <title>Card</title>
+        <style>
+            *,*::before,*::after{
+                box-sizing: border-box;
+                margin: 0;
+                line-height: 1.5;
+            }
+            .card{
+                font-family: "Open Sans", sans-serif;
+                background-color: #000;
+                color: #fff;
+                border: 1px solid black;
+                border-radius: 10px;
+                width: 600px;
+                margin: 100px auto;
+                padding: 60px;
+            }
+            .name{
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 2.5px;
+            }
+            .title{
+                text-transform: capitalize;
+                margin:10px 0px;
+            }
+            .description{
+                max-width: 60ch;
+                color:#ffffffd2;
+            }
+            .btn{
+                background-color: lightgray;
+                color:grey;
+                margin-top: 15px ;
+                border: 2px solid lightgrey;
+                border-radius: 10px;
+                padding: 8px 16px;
+                cursor: pointer;
+            }
+            strong{
+                color: #fff;
+                text-transform: capitalize;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <header>
+                <p class="name"><strong>Tap Academy</strong></p>
+            </header>
+        <h1 class="title">Gamify Learning Simplify Employement</h1>
+        <p class="description">Tap Academy blends AR, Animation, and AI to teach coding, <br> <strong>full stack web development</strong>,
+        and tech trends, fostering personalized learning and community engagement.</p>
+        <button class="btn">Learn more</button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project1</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    font-family: Arial, sans-serif;
+    background-color: black; /* Fallback color */
+    color: #ffffff;
+    line-height: 1.6;
+    padding: 2rem;
+    margin: 2em;
+    position: relative; /* For positioning the pseudo-element */
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Ensures the image stays fixed during scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/3d_image.jpg") no-repeat center center;
+    background-size: contain;
+    opacity: 0.2; /* Adjust the opacity for less visibility */
+    z-index: -1; /* Keeps the image behind the content */
+    pointer-events: none; /* Allows content interactions without interference */
+}
+
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: cyan;
+            text-shadow: 0 0 20px cyan;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #FFC0CB;
+            text-shadow: 0 0 3px #FFC0CB;
+            margin-bottom: 0.5rem;
+            position: relative;
+            animation: fadeIn 2s ease-in;
+            letter-spacing: 0.04em;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #FFC0CB;
+            bottom: -5px;
+            left: 0;
+            animation: underlineGrow 1.5s ease-in-out forwards;
+        }
+
+        p, li {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            color: #ffcc66;
+        }
+
+        ul li {
+            animation-delay: 0.5s;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes underlineGrow {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .project1 {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2rem;
+            animation: popIn 1.5s ease-in-out;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .project1:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .key-features {
+            margin-top: 1.5rem;
+        }
+
+        .key-features h2 {
+            margin-top: 1.5rem;
+        }
+
+        .highlight {
+            color: cyan;
+            font-weight: bold;
+        }
+
+        .applications {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+        }
+
+        .applications h2 {
+            margin-bottom: 1rem;
+        }
+
+        /* Additional Animations */
+        .applications:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            transition: box-shadow 0.4s ease-in-out;
+        }
+
+        ul li:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .project1_heading{
+            font-size: 2rem;
+            text-align: center;
+            text-shadow: 0 0 50px #FFC0CB,
+                         0 0 10px #FFC0CB;
+        }
+        
+        /* Flexcard button styles */
+        .flexcard-button {
+            margin: 1em;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            color: black;
+            border: none;
+            border-radius: 1em;
+            cursor: pointer;
+            box-shadow: 0 0 10px #FFC0CB, 0 0 20px #FFC0CB, 0 0 30px #FFC0CB;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: buttonHover 1s ease-out infinite; /* Button hover animation */
+        }
+         /* Hover effect for buttons */
+         .bhov {
+            background-color: #FFB6C1;
+            transition: transform 0.3s;
+        }
+
+        .bhov:hover {
+            border: 2px solid #FFC0CB;
+            border-radius: 2em;
+            background-color: white;
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px #FFC0CB, 0 0 20px #FFC0CB, 0 0 30px #FFC0CB;
+            transform: scale(1.05); /* Slight grow effect on hover */
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .pro{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Project</h1>
+    <section class="project1">
+        <div class="pro">
+            <h2 class="project1_heading">3D Rotating Design with Interactive Animation</h2>
+            <button class="flexcard-button bhov"><a href="C:\Users\durga\Desktop\3D designing\3d.html">Learn More</a></button>
+        </div>
+        <p class="project1_description">This project showcases a visually appealing <span class="highlight">3D rotating design</span> created using pure HTML, CSS, and a touch of JavaScript for interactivity. The design features six concentric squares, each dynamically rotating at different speeds, creating an engaging 3D effect.</p>
+
+        <div class="key-features">
+            <h2>Key Features:</h2>
+            <h2>1) Smooth Animations:</h2>
+            <p>A custom <code>@keyframes</code> animation gives each square a unique rotation effect, simulating a mesmerizing 3D motion.</p>
+            <h2>2) Interactive Hover Effects:</h2>
+            <p>When hovered over, each square pauses its rotation and changes color, creating an engaging user interaction.</p>
+            <h2>3) Click-Based Interactions:</h2>
+            <p>Users can click on any square to change its color dynamically, demonstrating JavaScript-driven interactivity.</p>
+            <h2>4) Responsive Center Alignment:</h2>
+            <p>The design is centrally positioned on the screen using CSS flexbox techniques, ensuring it looks visually balanced across various screen sizes.</p>
+            <h2>5) Modern Aesthetic:</h2>
+            <p>A soothing blue palette combined with shadows creates a modern and elegant 3D visual appeal.</p>
+        </div>
+
+        <div class="applications">
+            <h2>Applications:</h2>
+            <p>This design can be adapted for <span class="highlight">web banners</span>, <span class="highlight">loading animations</span>, or <span class="highlight">interactive web elements</span> to enhance user experience.</p>
+        </div>
+
+        <p>This project highlights my proficiency in:</p>
+        <ul>
+            <li>CSS animations for creative visuals.</li>
+            <li>JavaScript event handling for interactive designs.</li>
+            <li>Crafting responsive and visually stunning elements suitable for web applications.</li>
+        </ul>
+    </section>
+</body>
+</html>
